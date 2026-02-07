@@ -29,14 +29,20 @@
       color: #d6336c;
       border: 2px solid #d6336c;
     }
+    #message {
+      margin-top: 20px;
+      font-size: 20px;
+      color: #333;
+    }
     img {
       margin-top: 20px;
-      width: 250px;
+      width: 300px;
+      border-radius: 10px;
     }
   </style>
 </head>
 <body>
-  <h1>Bujji, will you be my Valentine? 💗💞</h1>
+  <h1>Bujji, will you be my Valentine? 💗💕</h1>
   <p>Choose wisely. (The “No” button is shy 😉)</p>
   <button class="btn yes" onclick="sayYes()">YES</button>
   <button class="btn no" onclick="sayNo()">Don't do this to me 💔</button>
@@ -47,14 +53,15 @@
     let noClicks = 0;
     function sayYes() {
       document.getElementById("message").innerHTML = "Best decision ever 😘 I love you ❤️";
-      document.getElementById("hugImage").src = "https://tenor.com/view/couple-kiss-kiss-gif-5872875262854874321"; // hugging couple image
+      // Use a direct GIF link instead of a Tenor page
       document.getElementById("hugImage").src = "https://media.tenor.com/2roX3uxz_68AAAAC/couple-hug.gif";
-
     }
     function sayNo() {
       noClicks++;
       if(noClicks === 1){
         document.getElementById("message").innerHTML = "Don't click this 😅";
+      } else if(noClicks === 2){
+        document.getElementById("message").innerHTML = "Are you really sure? 🤔";
       } else {
         document.getElementById("message").innerHTML = "Please... until you say YES 💕";
       }
@@ -62,4 +69,3 @@
   </script>
 </body>
 </html>
-
